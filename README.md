@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-npm install
+vue create components #vue create folder-name
 ```
 
 ### Compiles and hot-reloads for development
