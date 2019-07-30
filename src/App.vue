@@ -3,16 +3,18 @@
     <h1>Ordered By Storge</h1>
     <ol>
       <li v-for="pipe in pipes">
-        {{pipe.color}} {{pipe.length}}
+        <button>{{pipe.color}} {{pipe.length}}</button>
       </li>
     </ol>
     <h2>Last In, First Out:</h2>
     <Filters @retrievalOrder="reverseOrder" @resetOrder="originalOrder"></Filters>
+    <Length v-bind:lengths="lengths"></Length>
   </div>
 </template>
 
 <script>
-import Filters from './components/Filters.vue'
+import Filters from './components/Filters.vue';
+import Length from './components/Length.vue';
 
 export default {
   name: 'app',
@@ -23,6 +25,11 @@ export default {
         {color: 'blue', length: 'medium'},
         {color: 'lightBlue', length: 'long'},
         {color: 'red', length: 'short'}
+      ],
+      lengths: [
+        {lengthy: 'short', measurement: '12 feet'},
+        {lengthy: 'medium', measurement: '18 feet'},
+        {lengthy: 'long', measurement: '25 feet'}
       ]
     }
   },
@@ -35,10 +42,12 @@ export default {
     }
   },
   components: {
-    Filters
+    'Filters' : Filters,
+    'Length': Length
   }
 }
 </script>
 
 <style>
+
 </style>
