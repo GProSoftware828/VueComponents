@@ -1,8 +1,9 @@
 <template>
   <div>
     <h2>Lengths: </h2>
+    <button @click="isShown = true">Show Measurements</button>
     <ol>
-      <li v-for="length in this.lengths">
+      <li v-show="isShown" v-for="length in this.lengths">
         {{length.lengthy}} {{length.measurement}}
       </li>
     </ol>
@@ -16,6 +17,11 @@
       lengths: {
         type: Array,
         required: true
+      }
+    },
+    data() {
+      return {
+      isShown: false
       }
     }
   }
