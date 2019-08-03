@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Lengths: </h2>
-    <button @click="isShown = true">Show Measurements</button>
+    <button @click="isShown = !isShown">Show or Hide</button>
     <ol>
       <li v-show="isShown" v-for="length in this.lengths">
         {{length.lengthy}} {{length.measurement}}
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import {eventBus} from '../main.js';
+
   export default {
     name: 'Length',
     props: {
@@ -21,7 +23,7 @@
     },
     data() {
       return {
-      isShown: false
+      isShown: false,
       }
     }
   }

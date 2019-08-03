@@ -6,11 +6,19 @@
 </template>
 
 <script>
+import {eventBus} from '../main.js';
+
 export default {
   name: 'Filters',
   data() {
     return {
-      isClicked: false
+      isClicked: false,
+      quantity: [
+        {green: 8},
+        {blue: 4},
+        {lightBlue: 1},
+        {red: 3}
+      ]
     }
   },
   created() {
