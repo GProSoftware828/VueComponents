@@ -2,11 +2,12 @@
   <div>
     <button type="button" @click="retrievalOrder" :disabled="isClicked">Order By Retrieval</button>
     &nbsp&nbsp<button @click="resetOrder" :disabled="!isClicked">Reset</button>
+    &nbsp&nbsp<button @click="emitGlobalClickEvent()">Click Me For Event Bus</button>
   </div>
 </template>
 
 <script>
-import {eventBus} from '../main.js';
+import {eventBus} from '../main';
 
 export default {
   name: 'Filters',
@@ -18,7 +19,8 @@ export default {
         {blue: 4},
         {lightBlue: 1},
         {red: 3}
-      ]
+      ],
+      clickCount: 0
     }
   },
   created() {
@@ -34,11 +36,10 @@ export default {
       this.$emit('resetOrder');
       this.isClicked = false;
       console.log(this.isClicked);
-    }
-  },
-  computed: {
-    isDisabled: function() {
-      return !this.isClicked
+    },
+    emitGlobalClickEvent() {
+      this.clickCount++;
+      eventBus.$emit('i-got-clicked', this.clickCount);
     }
   }
 }

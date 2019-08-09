@@ -30,6 +30,12 @@ export default {
         {lengthy: 'short', measurement: '12 feet'},
         {lengthy: 'medium', measurement: '18 feet'},
         {lengthy: 'long', measurement: '25 feet'}
+      ],
+      amount: [
+        {color: 'green', quantity: '5'},
+        {color: 'blue', quantity: '3'},
+        {color: 'lightBlue', quantity: '2'},
+        {color: 'red', quantity: '2'}
       ]
     }
   },

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import {eventBus} from '../main.js';
+import {eventBus} from '../main';
 
   export default {
     name: 'Length',
@@ -25,6 +25,11 @@ import {eventBus} from '../main.js';
       return {
       isShown: false,
       }
+    },
+    created() {
+      eventBus.$on('i-got-clicked', clickCount => {
+        alert(`Click number: ${clickCount}`)
+      });
     }
   }
 </script>
