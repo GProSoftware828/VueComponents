@@ -2,15 +2,11 @@
   <div>
     <h2>Lengths: </h2>
     <button @click="isShown = !isShown">Show or Hide</button>
-    
-      <ol>
-        <transition name="fade">
-          <li v-show="isShown" v-for="length in this.lengths">
-            {{length.measurement}}
-          </li>
-        </transition>
-      </ol>
-    
+    <ol>
+      <li v-show="isShown" v-for="length in this.lengths">
+        {{length.lengthy}} {{length.measurement}}
+      </li>
+    </ol>
   </div>
 </template>
 
