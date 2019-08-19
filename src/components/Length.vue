@@ -3,9 +3,9 @@
     <h2>Lengths: </h2>
     <button @click="isShown = !isShown">Show or Hide</button>
     <ol>
-      <li v-show="isShown" v-for="length in this.lengths">
-        {{length.lengthy}} {{length.measurement}}
-      </li>
+        <li v-show="isShown" v-for="length in this.lengths">
+          {{length.lengthy}} 
+        </li>
     </ol>
   </div>
 </template>
@@ -33,13 +33,3 @@ import {eventBus} from '../main';
     }
   }
 </script>
-
-<style>
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 2s;
-  }
-</style>
